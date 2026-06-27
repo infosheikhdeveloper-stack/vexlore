@@ -1,0 +1,448 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: #05000b;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+/* PREMIUM BACKGROUND GLOWS */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(123, 0, 255, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(75, 0, 255, 0.15), transparent 40%),
+        linear-gradient(180deg, #070010, #030007);
+    z-index: -3;
+}
+
+.glow1, .glow2 {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.glow1 {
+    top: -150px;
+    left: -150px;
+    background: #b300ff;
+    opacity: 0.35;
+}
+
+.glow2 {
+    bottom: -150px;
+    right: -150px;
+    background: #5e00ff;
+    opacity: 0.35;
+}
+
+/* ==========================================
+   HEADER & LOGO
+   ========================================== */
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0 40px;
+}
+
+.logo-box img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    animation: logoGlow 3s infinite ease-in-out;
+}
+
+.logo-box h1 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #ffffff, #d100ff, #8a00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(183, 0, 255, 0.3));
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(179, 0, 255, 0.6));
+    }
+    50% {
+        transform: scale(1.06);
+        filter: drop-shadow(0 0 25px rgba(195, 0, 255, 0.8)) drop-shadow(0 0 50px rgba(195, 0, 255, 0.4));
+    }
+}
+
+/* ==========================================
+   CONTAINER & CARDS
+   ========================================== */
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(183, 0, 255, 0.2);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(183, 0, 255, 0.4);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #c300ff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-left: 3px solid #c300ff;
+    padding-left: 10px;
+}
+
+/* ==========================================
+   FORMS & INPUTS
+   ========================================== */
+label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a99bbd;
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    background: #0f021a;
+    color: #fff;
+    font-family: inherit;
+    border: 1px solid rgba(183, 0, 255, 0.2);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus {
+    border-color: #c300ff;
+    background: #150224;
+    box-shadow: 
+        0 0 20px rgba(195, 0, 255, 0.25),
+        inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.preview {
+    width: 100%;
+    max-height: 240px;
+    margin-top: 15px;
+    border-radius: 16px;
+    display: none;
+    object-fit: cover;
+    border: 1px solid rgba(183, 0, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ==========================================
+   DYNAMIC PLAYER SECTION
+   ========================================== */
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#addPlayerBtn {
+    background: linear-gradient(45deg, #5e00ff, #b300ff);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(138, 0, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+#addPlayerBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(179, 0, 255, 0.5);
+}
+
+.player-box {
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(183, 0, 255, 0.15);
+    box-shadow: inset 0 0 15px rgba(183, 0, 255, 0.05);
+}
+
+.player-box h4 {
+    margin-bottom: 15px;
+    color: #d100ff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.player-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #0f021a;
+}
+
+.leader-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    background: rgba(183, 0, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px dashed rgba(183, 0, 255, 0.2);
+}
+
+.leader-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #c300ff;
+    cursor: pointer;
+}
+
+/* ==========================================
+   PREMIUM PAYMENT MODULE (SEPARATED)
+   ========================================== */
+.payment-card {
+    background: rgba(15, 2, 26, 0.65);
+    border: 2px solid rgba(195, 0, 255, 0.35);
+    border-radius: 26px;
+    padding: 30px 25px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(195, 0, 255, 0.1);
+}
+
+.qr-container {
+    max-width: 240px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.qr-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    background: #fff; /* standard fallback for clear QR scanning code */
+    box-shadow: 0 0 25px rgba(195, 0, 255, 0.2);
+}
+
+.payment-box {
+    padding: 18px;
+    border-radius: 16px;
+    background: #090012;
+    border: 1px solid rgba(183, 0, 255, 0.15);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.payment-box span.highlight {
+    color: #c300ff;
+    font-weight: 700;
+}
+
+/* ==========================================
+   IMPORTANT NOTES MODULE (SEPARATED)
+   ========================================== */
+.note-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255, 50, 50, 0.03);
+    border: 1px solid rgba(255, 64, 64, 0.25);
+    line-height: 1.7;
+    font-size: 13px;
+    color: #e0d5ed;
+    position: relative;
+}
+
+.note-box::before {
+    content: '⚠️';
+    margin-right: 8px;
+}
+
+.note-box ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.note-box li {
+    margin-bottom: 6px;
+}
+
+/* ==========================================
+   SUBMIT BUTTON
+   ========================================== */
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg, #5e00ff, #d100ff);
+    box-shadow: 0 0 30px rgba(162, 0, 255, 0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(162, 0, 255, 0.7);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   CUSTOM ALERTS
+   ========================================== */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 0, 7, 0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.alert-box {
+    width: 90%;
+    max-width: 380px;
+    padding: 30px;
+    background: #0f021a;
+    border: 2px solid #c300ff;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(195, 0, 255, 0.5);
+    animation: alertPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes alertPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.alert-box h2 {
+    color: #c300ff;
+    font-size: 22px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.alert-box p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.alert-btn {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(45deg, #5e00ff, #d100ff);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(162, 0, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.alert-btn:hover {
+    box-shadow: 0 8px 20px rgba(162, 0, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 500px) {
+    body {
+        padding: 12px;
+    }
+    
+    .logo-box h1 {
+        font-size: 26px;
+    }
+    
+    .title {
+        font-size: 21px;
+    }
+    
+    .card, .payment-card {
+        padding: 20px 16px;
+    }
+    
+    input, .submit-btn {
+        padding: 16px;
+    }
+}

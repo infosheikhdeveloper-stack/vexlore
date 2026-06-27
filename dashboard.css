@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.appname {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.appname span {
+    display: block;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.badge {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255,0,255,0.5);
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    padding: 30px;
+}
+
+/* ================= CARDS ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
+    transform: perspective(900px) rotateX(5deg);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: perspective(900px) rotateX(0deg) scale(1.05);
+}
+
+.card h3 {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.card p {
+    font-size: 34px;
+    margin-top: 10px;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+}
+
+/* ================= LIVE BUTTON ================= */
+.live-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.live-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: linear-gradient(45deg, #ff003c, #ff7b00);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+    transition: 0.3s;
+}
+
+.live-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255,0,0,0.8);
+}

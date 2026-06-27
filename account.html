@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEXLORE Account</title>
+
+<link rel="stylesheet" href="account.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<header>
+
+<div class="logo-box">
+<img src="logo2.png">
+<h1>VEXLORE</h1>
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="profile-card">
+
+<img id="teamLogo"
+src="logo2.png"
+class="team-logo">
+
+<h2 id="userName">Loading...</h2>
+
+<p id="userPhone">Phone</p>
+
+<p id="userEmail">Email</p>
+
+</div>
+
+<div class="buttons">
+
+<button id="teamBtn">
+YOUR TEAM
+</button>
+
+<button id="contactBtn">
+CONTACT
+</button>
+
+<button id="logoutBtn">
+LOGOUT
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- CONTACT PANEL -->
+
+<div class="bottom-sheet" id="contactSheet">
+
+<div class="sheet-content">
+
+<h2>CONTACT US</h2>
+
+<p>📞 +91 7051932522</p>
+
+<p>📞 +91 9797488873</p>
+
+<p>✉️ info.vexlore@gmail.com</p>
+
+<div class="socials">
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-telegram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+</div>
+
+<button onclick="closeSheet('contactSheet')">
+CLOSE
+</button>
+
+</div>
+
+</div>
+
+<script src="account.js"></script>
+
+</body>
+</html>

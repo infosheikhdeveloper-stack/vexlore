@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEXLORE Admin Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+
+<div class="brand">
+<div class="logo">🎮</div>
+<div class="appname">
+VEXLORE
+<span>Admin Panel</span>
+</div>
+</div>
+
+<div class="badge">ADMIN PANEL</div>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+<div class="container">
+
+<!-- STATS CARDS -->
+<div class="grid">
+
+<div class="card">
+<h3>Total Teams</h3>
+<p id="totalTeams">0</p>
+</div>
+
+<div class="card">
+<h3>Total Players</h3>
+<p id="totalPlayers">0</p>
+</div>
+
+<div class="card">
+<h3>Total Users</h3>
+<p id="totalUsers">0</p>
+</div>
+
+</div>
+
+<!-- LIVE MATCH BUTTON -->
+<div class="live-section">
+
+<a href="live_control.html" class="live-btn">
+🔴 CONTROL LIVE MATCH
+</a>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

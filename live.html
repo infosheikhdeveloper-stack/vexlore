@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEXLORE LIVE</title>
+
+<link rel="stylesheet" href="live.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="live.js" defer></script>
+
+
+</head>
+
+<body>
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<header class="topbar">
+<div class="brand">
+<img src="logo2.png">
+<h2>VEXLORE</h2>
+</div>
+
+<div class="live-badge">🔴 LIVE</div>
+</header>
+
+<div class="container">
+
+<div class="game-title">FREE FIRE ELITE MATCH</div>
+<div class="live-text">LIVE CUSTOM MATCH</div>
+
+<!-- MATCH -->
+<div class="match-card">
+
+<div class="team">
+<h3 id="teamA">TEAM A</h3>
+<p id="leaderA">Leader</p>
+</div>
+
+<div class="vs">VS</div>
+
+<div class="team">
+<h3 id="teamB">TEAM B</h3>
+<p id="leaderB">Leader</p>
+</div>
+
+</div>
+
+<!-- SCORE -->
+<div class="score-box">
+<h2>LIVE SCORE</h2>
+
+<div class="score-row">
+<div>
+<h3 id="scoreA">0</h3>
+<p>VICTORIES</p>
+</div>
+
+<div>
+<h3 id="scoreB">0</h3>
+<p>VICTORIES</p>
+</div>
+</div>
+
+</div>
+
+<!-- ROUND -->
+<div class="round-box">
+<div class="round-head" id="round">ROUND 1</div>
+<p id="status">Loading match...</p>
+</div>
+
+</div>
+
+<!-- MINI SCORE BOARD -->
+<div id="miniScore" style="display:none;">
+  <span id="miniA">A</span>
+  <b> VS </b>
+  <span id="miniB">B</span>
+</div>
+
+<!-- BUTTON -->
+<button id="toggleMini">SHOW SCORE</button>
+
+
+</body>
+</html>
