@@ -79,3 +79,63 @@ function showTeam() {
 
 loadTeams();
 
+
+
+
+
+const currentUser =
+JSON.parse(localStorage.getItem("vexloreUser"));
+
+loadMyTeam();
+
+async function loadMyTeam(){
+
+if(!currentUser) return;
+
+const { data,error } = await db
+.from("tournament_registrations")
+.select("*")
+.eq("email", currentUser.email)
+.single();
+
+if(error || !data) return;
+
+const hero =
+document.getElementById("heroSection");
+
+let statusText = "";
+
+if(data.status === "accepted"){
+statusText = "✅ TEAM ACCEPTED";
+}
+else if(data.status === "waiting"){
+statusText = "⏳ REQUEST PENDING";
+}
+else{
+statusText = "❌ REQUEST REJECTED";
+}
+
+hero.innerHTML = `
+
+<div class="my-team-card">
+
+<img
+src="${data.logo_url}"
+class="my-team-logo">
+
+<h2>${data.team_name}</h2>
+
+<p>
+Leader:
+${data.leader_name}
+</p>
+
+<div class="status-badge">
+${statusText}
+</div>
+
+</div>
+
+`;
+
+}
