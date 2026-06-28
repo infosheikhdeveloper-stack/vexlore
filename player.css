@@ -126,20 +126,3 @@ color:#cfcfcf;
 margin:2px 0;
 }
 
-
-
-
-.badge-icon{
-  width:200px;
-  height:200px;
-  display:block;
-  margin:0 auto 8px auto;
-  object-fit:contain;
-  filter: drop-shadow(0 0 8px rgba(195,0,255,.5));
-}
-
-.badge{
-  text-align:center;
-  font-weight:700;
-  color:#fff;
-}
