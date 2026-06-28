@@ -427,3 +427,41 @@ font-size:20px;
 
 }
 
+
+
+.my-team-card{
+text-align:center;
+}
+
+.my-team-logo{
+width:140px;
+height:140px;
+object-fit:cover;
+border-radius:50%;
+margin:auto;
+display:block;
+border:3px solid #c300ff;
+box-shadow:0 0 30px #c300ff;
+animation:pulse 2s infinite;
+}
+
+.my-team-card h2{
+margin-top:15px;
+font-size:28px;
+color:#fff;
+}
+
+.status-badge{
+margin-top:15px;
+padding:12px;
+border-radius:14px;
+background:#c300ff;
+font-weight:700;
+box-shadow:0 0 20px #c300ff;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.05);
+}
+}
