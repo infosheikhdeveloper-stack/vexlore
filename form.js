@@ -198,16 +198,19 @@ logoUrl = data.publicUrl;
 }
 
 const { error } = await db
-
 .from("tournament_registrations")
-
 .insert([{
+
+user_id: user.id,
 
 team_name: teamName,
 email: email,
 leader_name: leaderName,
 utr: utr,
 logo_url: logoUrl,
+
+status: "waiting",
+
 players: players
 
 }]);
@@ -258,10 +261,10 @@ ${playerDetails}
 
 ✅ Registration Submitted`;
 
-window.open(
-"https://wa.me/917051932522?text=${encodeURIComponent(whatsappMessage)}",
-"_blank"
-);
+const whatsappUrl =
+`https://wa.me/917051932522?text=${encodeURIComponent(whatsappMessage)}`;
+
+window.open(whatsappUrl, "_blank");
 
 alert(
 "✅ Request Sent Successfully"
